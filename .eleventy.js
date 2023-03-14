@@ -1,5 +1,8 @@
 const markdownIt = require("markdown-it");
 const markdownItAnchor = require("markdown-it-anchor");
+const tocExtract = require("toc-extract/plugins/eleventy.js")
+const markdownItScrollTable = require('markdown-it-scrolltable');
+
 module.exports = (config) => {
   config.addPassthroughCopy({ 'public': './' })
   config.setBrowserSyncConfig({
@@ -18,7 +21,8 @@ module.exports = (config) => {
       level: [1,2,3,4],
     }),
     slugify: config.getFilter("slug")
-  });
+  }).use(markdownItScrollTable);
+  config.addPlugin(tocExtract, {listElement: "ol", minLevel: 1})
   config.setLibrary("md", markdownLibrary);
   return {
     dir: {

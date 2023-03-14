@@ -1,11 +1,13 @@
-# Lenguajes y Compiladores FIUBA
+---
+title: Lenguajes y Compiladores FIUBA 1c23
+---
 Se viene una nueva edición de compiladores. Cátedra Mendez.
 
 A pesar de que los utilizan todos los días, la mayoría de los ingenieros de software tienen muy poco conocimiento sobre cómo están diseñados e implementados los lenguajes de programación. Solo con ver que las portadas de los libros sobre el tema tienen “dragones”, “tigres” y otras bestias mitológicas que sugieren una rama muy compleja de las Ciencias de la Computación se esconde detrás de ellas. Este curso romperá este prejuicio y basándose en un enfoque teórico-práctico emprenderá un camino para comprender y estudiar la belleza detrás de los lenguajes de programación y sus compiladores. El objetivo de la materia es entender, diseñar e implementar un compilador y un intérprete de un lenguaje de programación de alto nivel. Además de adquirir y manejar los conceptos de la Ciencia de la Computación involucrados en la construcción de este tipo de herramientas: teoría del lenguaje, autómatas finitos deterministas y no deterministas, análisis sintáctico ascendente y descendente, análisis semántico, generación de código intermedio y generación de código ejecutable, optimización de código, entre otros.
 
 Se renovaron los trabajos prácticos: utilizaremos deno y typescript. En el cuatrimestre se utilizará el intérprete del lenguaje LUA como caso de estudio. Los alumnos desarrollarán un lenguaje de programación personalizado a lo largo del cuatrimestre, haciendo entregas pequeñas y pautadas. Como TP final, adaptarán el lenguaje a alguna otra máquina virtual existente de aplicación industrial que deseen.
 
-## Docentes
+# Docentes
 - Prof.: Mariano Méndez
     - marianomendez@fi.uba.ar
     - github.com/mendezmariano
@@ -15,7 +17,7 @@ Se renovaron los trabajos prácticos: utilizaremos deno y typescript. En el cuat
 - Ayudante: Lucas Fiegl
     - github.com/io4
 
-## Bibligrafía 
+# Bibligrafía 
 
 1. Watson, D. (2017). **A practical approach to compiler construction**. Springer International Publishing.
 2. Grune, D., Van Reeuwijk, K., Bal, H. E., Jacobs, C. J., & Langendoen, K. (2012). **Modern compiler design**. Springer Science & Business Media.
@@ -35,22 +37,23 @@ y muchos más
 (*) indica los libros clásicos.
 
 
-## Horarios de clase
+# Horarios de clase
 
 - Lunes 19 a 22 (teórica)
 - Miércoles 19 a 22 (práctica)
 
 Las clases virtuales se realizan en un link de google meet que se envía unos minutos antes de la clase a discord.
 
-## Canales de Comunicación
+# Canales de Comunicación
 
 - [grupo de google](https://groups.google.com/g/lenguajes-y-compiladores)
 - Servidor de discord
+- [Apunte de la teoría](https://compiladores.github.io/teo)
 
-## Calendario
-<iframe width=800 height=500 src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQg_Xk6KqXCaGjjuN8_eFZ8S_HweXNvoIhNGCRAcQIESBxV7uKxnNwW4k_EEnji-OLPApirdMX6a1p_/pubhtml?gid=1728272792&amp;single=true&amp;widget=true&amp;headers=false"></iframe>
+# Calendario
+<iframe width=800 height=500 src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQg_Xk6KqXCaGjjuN8_eFZ8S_HweXNvoIhNGCRAcQIESBxV7uKxnNwW4k_EEnji-OLPApirdMX6a1p_/pubhtml?gid=1728272792&amp;single=true&amp;widget=true&amp;headers=false" class="w-full"></iframe>
 
-## Metodología de la práctica
+# Metodología de la práctica
 
 <table>
     <thead>
@@ -93,6 +96,6 @@ Las clases virtuales se realizan en un link de google meet que se envía unos mi
 - Nota final: 60% TPF + 40% nota de la práctica.
 - Condición de aprobación (nota 4): Entregar todos los TPO antes de la última clase de la práctica
 
-### Tabla de pesos de cada entregable en la nota final
-<iframe width=800 height=500 src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQg_Xk6KqXCaGjjuN8_eFZ8S_HweXNvoIhNGCRAcQIESBxV7uKxnNwW4k_EEnji-OLPApirdMX6a1p_/pubhtml?gid=173989754&amp;single=true&amp;widget=false&amp;headers=false"></iframe>
+## Tabla de pesos de cada entregable en la nota final
+<iframe width=800 height=500 src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQg_Xk6KqXCaGjjuN8_eFZ8S_HweXNvoIhNGCRAcQIESBxV7uKxnNwW4k_EEnji-OLPApirdMX6a1p_/pubhtml?gid=173989754&amp;single=true&amp;widget=false&amp;headers=false" class="w-full"></iframe>
 
