@@ -27,7 +27,7 @@ module.exports = (config) => {
   return {
     dir: {
       input: 'src',
-      output: '_site',
+      output: 'dist',
     },
     markdownTemplateEngine: 'njk',
   }

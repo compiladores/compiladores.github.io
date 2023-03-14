@@ -24,11 +24,11 @@ jobs:
 
       # Runs a single command using the runners shell
       - name: nojekyll
-        run: touch _site/.nojekyll
+        run: touch dist/.nojekyll
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
         if: github.ref == 'refs/heads/main'
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./_site
+          publish_dir: ./dist
