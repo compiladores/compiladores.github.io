@@ -39,8 +39,8 @@ y muchos más
 
 # Horarios de clase
 
-- Lunes 19 a 22 (teórica)
-- Miércoles 19 a 22 (práctica)
+- Martes 18 a 21 (teórica presencial)
+- Miércoles 18 a 21 (práctica virtual)
 
 Las clases virtuales se realizan en un link de google meet que se envía unos minutos antes de la clase a discord.
 
