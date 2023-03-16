@@ -99,3 +99,12 @@ Las clases virtuales se realizan en un link de google meet que se envía unos mi
 ## Tabla de pesos de cada entregable en la nota final
 <iframe width=800 height=500 src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQg_Xk6KqXCaGjjuN8_eFZ8S_HweXNvoIhNGCRAcQIESBxV7uKxnNwW4k_EEnji-OLPApirdMX6a1p_/pubhtml?gid=173989754&amp;single=true&amp;widget=false&amp;headers=false" class="w-full"></iframe>
 
+# Prácticas
+## práctica 1 - semop
+- Tema: semántica operacional
+- Fecha: 15/3
+- [video de clase](https://vimeo.com/808545954)
+- [presentación semop](https://compiladores.github.io/p/semop.html)
+- [presentación metodología](https://compiladores.github.io/p/metodologia.html)
+- [classroom lab1](https://classroom.github.com/a/wJiJqyOS) fecha límite: lunes 20/3 23:59
+- [classroom tpo1](https://classroom.github.com/a/yRgjdgOG) fecha límite: martes 11/4 23:59
