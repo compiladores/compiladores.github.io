@@ -111,6 +111,6 @@ Las clases virtuales se realizan en un link de google meet que se envía unos mi
 ## práctica 2 - tipos
 - Tema: tipos
 - Fecha: 22/3
-- [video de la clase](https://vimeo.com/manage/videos/810712163)
+- [video de la clase](https://vimeo.com/810712163)
 - [presentación](https://compiladores.github.io/p/tipos)
 - [classroom lab2](https://classroom.github.com/a/R_M-Sn_O)
