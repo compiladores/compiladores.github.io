@@ -99,7 +99,7 @@ Las clases virtuales se realizan en un link de google meet que se envía unos mi
 ## Tabla de pesos de cada entregable en la nota final
 <iframe width=800 height=500 src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQg_Xk6KqXCaGjjuN8_eFZ8S_HweXNvoIhNGCRAcQIESBxV7uKxnNwW4k_EEnji-OLPApirdMX6a1p_/pubhtml?gid=173989754&amp;single=true&amp;widget=false&amp;headers=false" class="w-full"></iframe>
 
-# Prácticas
+# Material 1c23
 ## práctica 1 - semop
 - Tema: semántica operacional
 - Fecha: 15/3
@@ -114,3 +114,15 @@ Las clases virtuales se realizan en un link de google meet que se envía unos mi
 - [video de la clase](https://vimeo.com/810712163)
 - [presentación](https://compiladores.github.io/p/tipos)
 - [classroom lab2](https://classroom.github.com/a/R_M-Sn_O)
+
+## Teórica 3 - lexers, introducción a parsers
+- Fecha: 28/03/23
+- [video de la clase](https://youtu.be/2zfyKaDnbQg)
+
+## práctica 3 - lexers
+- Fecha: 29/03/23
+- [video de la clase](https://youtu.be/ApDpZiSDIxI)
+- [presentación](https://compiladores.github.io/p/lexers)
+- [classroom lab3](https://classroom.github.com/a/PDP1_hWb)
+- [classroom tpo3](https://classroom.github.com/a/9LGlGcwp)
+- [classroom tpx3](https://classroom.github.com/a/_Ju8juVe)
