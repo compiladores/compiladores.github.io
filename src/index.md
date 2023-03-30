@@ -52,6 +52,7 @@ Las clases virtuales se realizan en un link de google meet que se envía unos mi
 
 # Calendario
 <iframe width=800 height=500 src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQg_Xk6KqXCaGjjuN8_eFZ8S_HweXNvoIhNGCRAcQIESBxV7uKxnNwW4k_EEnji-OLPApirdMX6a1p_/pubhtml?gid=1728272792&amp;single=true&amp;widget=true&amp;headers=false" class="w-full"></iframe>
+Fecha de entrega máxima tpx1: 2/5 23:59
 
 # Metodología de la práctica
 
@@ -108,6 +109,7 @@ Las clases virtuales se realizan en un link de google meet que se envía unos mi
 - [presentación metodología](https://compiladores.github.io/p/metodologia.html)
 - [classroom lab1](https://classroom.github.com/a/wJiJqyOS) fecha límite: lunes 20/3 23:59
 - [classroom tpo1](https://classroom.github.com/a/yRgjdgOG) fecha límite: martes 11/4 23:59
+- [classroom tpx1](https://classroom.github.com/a/cUYwFpRx) fecha límite: martes 2/5 23:59. **Por dependencia entre temas, recomendamos completarlo antes del 18/4**
 ## práctica 2 - tipos
 - Tema: tipos
 - Fecha: 22/3
