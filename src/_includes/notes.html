@@ -1,0 +1,97 @@
+
+<script>
+    function initData(){
+        this.grades=[]
+        this.rules=[]
+        this.rows=[]
+        this.columns=[]
+        Promise.all([
+            fetch("https://notas-gamma.vercel.app/api/grades.json")
+            .then(req => req.json())
+            .then(json => this.grades=json),
+            fetch("https://notas-gamma.vercel.app/api/rules.json")
+            .then(req => req.json())
+            .then(json => this.rules=json)
+        ]).then(([grades,rules])=>{
+            function gradeForAlumnRuleId(alumn,ruleId){
+                return grades.find(grade => grade.ruleId==ruleId && grade.alumn==alumn) || {}
+            }
+            const alumni=[...new Set(grades.map(grade => grade.alumn))]
+            const rows=alumni.map((alumn)=>({
+                alumn,
+                ...Object.fromEntries(rules.map((rule)=>[rule.id,{
+                    ...rule,
+                    ...gradeForAlumnRuleId(alumn,rule.id)
+                }])),
+                total:rules
+                    .map(rule=>({rule, grade:gradeForAlumnRuleId(alumn,rule.id)}))
+                    .filter(({rule,grade})=>grade?.fulfilled)
+                    .map(({rule,grade})=>rule.score)
+                    .reduce((a,s)=>a+s,0)
+
+            })).sort((r1,r2)=>r2.total-r1.total)
+            this.columns=["alumn",...rules.sort((ra,rb)=>Date.parse(ra.dueDate)-Date.parse(rb.dueDate)).map(rule=>rule.id),"total"];
+            console.log({rows})
+            this.rows=rows
+        })
+        this.ruleOfRuleId=function(ruleId){
+            return this.rules.find(r => r.id==ruleId)
+        }
+    }
+</script>
+
+<div x-data="{}" x-init="initData">
+    <template x-if="grades.length==0 || rules.length==0">
+        <p>Cargando...</p>
+    </template>
+    <table>
+        <thead>
+            <template x-for="column in columns">
+                <th x-text="column"></th>
+            </template>
+        </thead>
+        <tbody>
+            <tr>
+                <td>
+                    Nota
+                </td>
+                <template x-for="column in columns" >
+                    <template x-if="ruleOfRuleId(column)">
+                        <td>
+                            <span x-text="ruleOfRuleId(column)?.score"></span>
+                        </td>
+                    </template>
+                </template>
+            </tr>
+            <tr>
+                <td>
+                    Fecha
+                </td>
+                <template x-for="column in columns" >
+                    <template x-if="ruleOfRuleId(column)">
+                        <td>
+                            <span x-text="new Date(ruleOfRuleId(column)?.dueDate).toLocaleDateString()" x-bind:title="new Date(ruleOfRuleId(column)?.dueDate).toLocaleString()"></span>
+                        </td>
+                    </template>
+                </template>
+            </tr>
+            <template x-for="row in rows">
+                <tr>
+                    <template x-for="column in columns" >
+                        <td>
+                            <template x-if="['string','number'].includes(typeof row[column])">
+                                <span x-text="row[column]"></span>
+                            </template>
+                            <template x-if="!['string','number'].includes(typeof row[column])">
+                                <a x-bind:href="row[column].reasonUrl" x-bind:title="row[column].reason">
+                                    <template x-if="row[column].fulfilled"><span>✅</span></template>
+                                    <template x-if="!row[column].fulfilled"><span class="opacity-10">❌</span></template>
+                                </a>
+                            </template>
+                        </td>
+                    </template>
+                </tr>
+            </template>
+        </tbody>
+    </table>
+</div>

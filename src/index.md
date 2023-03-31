@@ -7,6 +7,9 @@ A pesar de que los utilizan todos los días, la mayoría de los ingenieros de so
 
 Se renovaron los trabajos prácticos: utilizaremos deno y typescript. En el cuatrimestre se utilizará el intérprete del lenguaje LUA como caso de estudio. Los alumnos desarrollarán un lenguaje de programación personalizado a lo largo del cuatrimestre, haciendo entregas pequeñas y pautadas. Como TP final, adaptarán el lenguaje a alguna otra máquina virtual existente de aplicación industrial que deseen.
 
+# Notas
+{% include "notes.html" %}
+
 # Docentes
 - Prof.: Mariano Méndez
     - marianomendez@fi.uba.ar
