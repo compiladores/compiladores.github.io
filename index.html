@@ -14,10 +14,106 @@
     
     <div class="prose max-w-none font-serif prose-h2:ml-4 prose-h3:ml-8 w-full overflow-x-hidden">
       <h1>Lenguajes y Compiladores FIUBA 1c23</h1>
-      <ol><li><a href="#docentes">Docentes #</a></li><li><a href="#bibligrafia">Bibligrafía #</a></li><li><a href="#horarios-de-clase">Horarios de clase #</a></li><li><a href="#canales-de-comunicacion">Canales de Comunicación #</a></li><li><a href="#calendario">Calendario #</a></li><li><a href="#metodologia-de-la-practica">Metodología de la práctica #</a><ol><li><a href="#tabla-de-pesos-de-cada-entregable-en-la-nota-final">Tabla de pesos de cada entregable en la nota final #</a></li></ol></li><li><a href="#material-1c23">Material 1c23 #</a><ol><li><a href="#practica-1-semop">práctica 1 - semop #</a></li><li><a href="#practica-2-tipos">práctica 2 - tipos #</a></li><li><a href="#teorica-3-lexers-introduccion-a-parsers">Teórica 3 - lexers, introducción a parsers #</a></li><li><a href="#practica-3-lexers">práctica 3 - lexers #</a></li></ol></li></ol>
+      <ol><li><a href="#notas">Notas #</a></li><li><a href="#docentes">Docentes #</a></li><li><a href="#bibligrafia">Bibligrafía #</a></li><li><a href="#horarios-de-clase">Horarios de clase #</a></li><li><a href="#canales-de-comunicacion">Canales de Comunicación #</a></li><li><a href="#calendario">Calendario #</a></li><li><a href="#metodologia-de-la-practica">Metodología de la práctica #</a><ol><li><a href="#tabla-de-pesos-de-cada-entregable-en-la-nota-final">Tabla de pesos de cada entregable en la nota final #</a></li></ol></li><li><a href="#material-1c23">Material 1c23 #</a><ol><li><a href="#practica-1-semop">práctica 1 - semop #</a></li><li><a href="#practica-2-tipos">práctica 2 - tipos #</a></li><li><a href="#teorica-3-lexers-introduccion-a-parsers">Teórica 3 - lexers, introducción a parsers #</a></li><li><a href="#practica-3-lexers">práctica 3 - lexers #</a></li></ol></li></ol>
       <p>Se viene una nueva edición de compiladores. Cátedra Mendez.</p>
 <p>A pesar de que los utilizan todos los días, la mayoría de los ingenieros de software tienen muy poco conocimiento sobre cómo están diseñados e implementados los lenguajes de programación. Solo con ver que las portadas de los libros sobre el tema tienen “dragones”, “tigres” y otras bestias mitológicas que sugieren una rama muy compleja de las Ciencias de la Computación se esconde detrás de ellas. Este curso romperá este prejuicio y basándose en un enfoque teórico-práctico emprenderá un camino para comprender y estudiar la belleza detrás de los lenguajes de programación y sus compiladores. El objetivo de la materia es entender, diseñar e implementar un compilador y un intérprete de un lenguaje de programación de alto nivel. Además de adquirir y manejar los conceptos de la Ciencia de la Computación involucrados en la construcción de este tipo de herramientas: teoría del lenguaje, autómatas finitos deterministas y no deterministas, análisis sintáctico ascendente y descendente, análisis semántico, generación de código intermedio y generación de código ejecutable, optimización de código, entre otros.</p>
 <p>Se renovaron los trabajos prácticos: utilizaremos deno y typescript. En el cuatrimestre se utilizará el intérprete del lenguaje LUA como caso de estudio. Los alumnos desarrollarán un lenguaje de programación personalizado a lo largo del cuatrimestre, haciendo entregas pequeñas y pautadas. Como TP final, adaptarán el lenguaje a alguna otra máquina virtual existente de aplicación industrial que deseen.</p>
+<h1 id="notas" tabindex="-1">Notas <a class="direct-link" href="#notas" aria-hidden="true">#</a></h1>
+<script>
+    function initData(){
+        this.grades=[]
+        this.rules=[]
+        this.rows=[]
+        this.columns=[]
+        Promise.all([
+            fetch("https://notas-gamma.vercel.app/api/grades.json")
+            .then(req => req.json())
+            .then(json => this.grades=json),
+            fetch("https://notas-gamma.vercel.app/api/rules.json")
+            .then(req => req.json())
+            .then(json => this.rules=json)
+        ]).then(([grades,rules])=>{
+            function gradeForAlumnRuleId(alumn,ruleId){
+                return grades.find(grade => grade.ruleId==ruleId && grade.alumn==alumn) || {}
+            }
+            const alumni=[...new Set(grades.map(grade => grade.alumn))]
+            const rows=alumni.map((alumn)=>({
+                alumn,
+                ...Object.fromEntries(rules.map((rule)=>[rule.id,{
+                    ...rule,
+                    ...gradeForAlumnRuleId(alumn,rule.id)
+                }])),
+                total:rules
+                    .map(rule=>({rule, grade:gradeForAlumnRuleId(alumn,rule.id)}))
+                    .filter(({rule,grade})=>grade?.fulfilled)
+                    .map(({rule,grade})=>rule.score)
+                    .reduce((a,s)=>a+s,0)
+
+            })).sort((r1,r2)=>r2.total-r1.total)
+            this.columns=["alumn",...rules.sort((ra,rb)=>Date.parse(ra.dueDate)-Date.parse(rb.dueDate)).map(rule=>rule.id),"total"];
+            console.log({rows})
+            this.rows=rows
+        })
+        this.ruleOfRuleId=function(ruleId){
+            return this.rules.find(r => r.id==ruleId)
+        }
+    }
+</script>
+<div x-data="{}" x-init="initData">
+    <template x-if="grades.length==0 || rules.length==0">
+        <p>Cargando...</p>
+    </template>
+    <div class="scroll-table" style="overflow-x:auto;"><table>
+        <thead>
+            <template x-for="column in columns">
+                <th x-text="column"></th>
+            </template>
+        </thead>
+        <tbody>
+            <tr>
+                <td>
+                    Nota
+                </td>
+                <template x-for="column in columns">
+                    <template x-if="ruleOfRuleId(column)">
+                        <td>
+                            <span x-text="ruleOfRuleId(column)?.score"></span>
+                        </td>
+                    </template>
+                </template>
+            </tr>
+            <tr>
+                <td>
+                    Fecha
+                </td>
+                <template x-for="column in columns">
+                    <template x-if="ruleOfRuleId(column)">
+                        <td>
+                            <span x-text="new Date(ruleOfRuleId(column)?.dueDate).toLocaleDateString()" x-bind:title="new Date(ruleOfRuleId(column)?.dueDate).toLocaleString()"></span>
+                        </td>
+                    </template>
+                </template>
+            </tr>
+            <template x-for="row in rows">
+                <tr>
+                    <template x-for="column in columns">
+                        <td>
+                            <template x-if="['string','number'].includes(typeof row[column])">
+                                <span x-text="row[column]"></span>
+                            </template>
+                            <template x-if="!['string','number'].includes(typeof row[column])">
+                                <a x-bind:href="row[column].reasonUrl" x-bind:title="row[column].reason">
+                                    <template x-if="row[column].fulfilled"><span>✅</span></template>
+                                    <template x-if="!row[column].fulfilled"><span class="opacity-10">❌</span></template>
+                                </a>
+                            </template>
+                        </td>
+                    </template>
+                </tr>
+            </template>
+        </tbody>
+    </table></div>
+</div>
 <h1 id="docentes" tabindex="-1">Docentes <a class="direct-link" href="#docentes" aria-hidden="true">#</a></h1>
 <ul>
 <li>Prof.: Mariano Méndez
