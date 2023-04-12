@@ -131,3 +131,9 @@ Fecha de entrega máxima tpx1: 2/5 23:59
 - [classroom lab3](https://classroom.github.com/a/PDP1_hWb)
 - [classroom tpo3](https://classroom.github.com/a/9LGlGcwp)
 - [classroom tpx3](https://classroom.github.com/a/_Ju8juVe)
+
+## práctica 4 - parser descendiente recursivo
+- Fecha: 12/04/2023
+- [video de la clase](https://youtu.be/W5Q9sOQpZ7Y)
+- [presentación](https://compiladores.github.io/p/parserdr)
+- [classroom tpo4](https://classroom.github.com/a/oJQz729m)
