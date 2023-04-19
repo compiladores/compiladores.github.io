@@ -81,7 +81,7 @@ Fecha de entrega máxima tpx1: 2/5 23:59
             <td>fecha de entrega</td>
             <td>Objetiva/automática</td>
         </tr>
-        <tr>
+        </tr>
             <td>TPX</td>
             <td>no</td>
             <td>fecha de entrega exclusiva</td>
@@ -137,3 +137,10 @@ Fecha de entrega máxima tpx1: 2/5 23:59
 - [video de la clase](https://youtu.be/W5Q9sOQpZ7Y)
 - [presentación](https://compiladores.github.io/p/parserdr)
 - [classroom tpo4](https://classroom.github.com/a/oJQz729m)
+
+## práctica 5 - intérprete
+- Fecha: 19/4/2023
+- [video de la clase](https://youtu.be/W7ajUX6KfuU)
+- [presentación](https://compiladores.github.io/p/interprete)
+- [classroom lab5](https://classroom.github.com/a/L2Ar-0iG)
+- [classroom tpo5](https://classroom.github.com/a/CWduB5qv)
