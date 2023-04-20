@@ -14,7 +14,7 @@
     
     <div class="prose max-w-none font-serif prose-h2:ml-4 prose-h3:ml-8 w-full overflow-x-hidden">
       <h1>Lenguajes y Compiladores FIUBA 1c23</h1>
-      <ol><li><a href="#notas">Notas #</a></li><li><a href="#docentes">Docentes #</a></li><li><a href="#bibligrafia">Bibligrafía #</a></li><li><a href="#horarios-de-clase">Horarios de clase #</a></li><li><a href="#canales-de-comunicacion">Canales de Comunicación #</a></li><li><a href="#calendario">Calendario #</a></li><li><a href="#metodologia-de-la-practica">Metodología de la práctica #</a><ol><li><a href="#tabla-de-pesos-de-cada-entregable-en-la-nota-final">Tabla de pesos de cada entregable en la nota final #</a></li></ol></li><li><a href="#material-1c23">Material 1c23 #</a><ol><li><a href="#practica-1-semop">práctica 1 - semop #</a></li><li><a href="#practica-2-tipos">práctica 2 - tipos #</a></li><li><a href="#teorica-3-lexers-introduccion-a-parsers">Teórica 3 - lexers, introducción a parsers #</a></li><li><a href="#practica-3-lexers">práctica 3 - lexers #</a></li><li><a href="#practica-4-parser-descendiente-recursivo">práctica 4 - parser descendiente recursivo #</a></li><li><a href="#practica-5-interprete">práctica 5 - intérprete #</a></li></ol></li></ol>
+      <ol><li><a href="#notas">Notas #</a></li><li><a href="#docentes">Docentes #</a></li><li><a href="#bibligrafia">Bibligrafía #</a></li><li><a href="#horarios-de-clase">Horarios de clase #</a></li><li><a href="#canales-de-comunicacion">Canales de Comunicación #</a></li><li><a href="#calendario">Calendario #</a></li><li><a href="#metodologia-de-la-practica">Metodología de la práctica #</a><ol><li><a href="#tabla-de-pesos-de-cada-entregable-en-la-nota-final">Tabla de pesos de cada entregable en la nota final #</a></li></ol></li><li><a href="#material-1c23">Material 1c23 #</a><ol><li><a href="#practica-1-semop">práctica 1 - semop #</a></li><li><a href="#practica-2-tipos">práctica 2 - tipos #</a></li><li><a href="#teorica-3-lexers-introduccion-a-parsers">Teórica 3 - lexers, introducción a parsers #</a></li><li><a href="#practica-3-lexers">práctica 3 - lexers #</a></li><li><a href="#practica-4-parser-descendiente-recursivo">práctica 4 - parser descendiente recursivo #</a></li><li><a href="#practica-5-interprete">práctica 5 - intérprete #</a></li></ol></li><li><a href="#trabajo-practico-final:-compilador-a-llvmir">Trabajo práctico final: compilador a LLVMIR #</a><ol><li><a href="#cronograma-recomendado">Cronograma recomendado #</a></li><li><a href="#dinamica-de-trabajo">Dinámica de trabajo #</a></li><li><a href="#criterios-de-evaluacion">Criterios de evaluación #</a></li><li><a href="#tpxf:-parser-de-un-lenguaje-personalizado">TPXF: Parser de un lenguaje personalizado #</a></li><li><a href="#links-muy-relevantes">Links muy relevantes #</a></li></ol></li></ol>
       <p>Se viene una nueva edición de compiladores. Cátedra Mendez.</p>
 <p>A pesar de que los utilizan todos los días, la mayoría de los ingenieros de software tienen muy poco conocimiento sobre cómo están diseñados e implementados los lenguajes de programación. Solo con ver que las portadas de los libros sobre el tema tienen “dragones”, “tigres” y otras bestias mitológicas que sugieren una rama muy compleja de las Ciencias de la Computación se esconde detrás de ellas. Este curso romperá este prejuicio y basándose en un enfoque teórico-práctico emprenderá un camino para comprender y estudiar la belleza detrás de los lenguajes de programación y sus compiladores. El objetivo de la materia es entender, diseñar e implementar un compilador y un intérprete de un lenguaje de programación de alto nivel. Además de adquirir y manejar los conceptos de la Ciencia de la Computación involucrados en la construcción de este tipo de herramientas: teoría del lenguaje, autómatas finitos deterministas y no deterministas, análisis sintáctico ascendente y descendente, análisis semántico, generación de código intermedio y generación de código ejecutable, optimización de código, entre otros.</p>
 <p>Se renovaron los trabajos prácticos: utilizaremos deno y typescript. En el cuatrimestre se utilizará el intérprete del lenguaje LUA como caso de estudio. Los alumnos desarrollarán un lenguaje de programación personalizado a lo largo del cuatrimestre, haciendo entregas pequeñas y pautadas. Como TP final, adaptarán el lenguaje a alguna otra máquina virtual existente de aplicación industrial que deseen.</p>
@@ -258,6 +258,82 @@ Fecha de entrega máxima tpx1: 2/5 23:59
 <li><a href="https://compiladores.github.io/p/interprete">presentación</a></li>
 <li><a href="https://classroom.github.com/a/L2Ar-0iG">classroom lab5</a></li>
 <li><a href="https://classroom.github.com/a/CWduB5qv">classroom tpo5</a></li>
+</ul>
+<h1 id="trabajo-practico-final:-compilador-a-llvmir" tabindex="-1">Trabajo práctico final: compilador a LLVMIR <a class="direct-link" href="#trabajo-practico-final:-compilador-a-llvmir" aria-hidden="true">#</a></h1>
+<ul>
+<li>Objetivo: desarrollar un compilador de jsonasm a LLVMIR.</li>
+<li>El esquema JSON correspondiente a jsonlang y baterías de pruebas se incluyen en TPO5 y TPO7. La batería de pruebas debe modificarse para cumplir con las diferencias enumeradas abajo. Esta adaptación es parte del alcance del TPF.</li>
+<li>Los algoritmos necesarios para llevar adelante este TP son parte del módulo 7 (compilador)</li>
+<li>La mayor parte del trabajo necesario se trata de analizar la documentación de LLVMIR <a href="https://llvm.org/docs/LangRef.html">https://llvm.org/docs/LangRef.html</a> y el proyecto LLVM en sí mismo.</li>
+<li>Diferencias entre TPF, TPO5 y TPO7:
+<ul>
+<li>El TPF sólo debe soportar enteros. Las operaciones matemáticas válidas deben ser aquellas que funcionan entre 2 enteros y devuelven un entero.</li>
+<li>No es obligatorio que el TPF soporte recursividad (tal como TPO7)</li>
+</ul>
+</li>
+<li>No se debe usar C++ para la implementación del TPF.</li>
+</ul>
+<h2 id="cronograma-recomendado" tabindex="-1">Cronograma recomendado <a class="direct-link" href="#cronograma-recomendado" aria-hidden="true">#</a></h2>
+<ul>
+<li>24/5: Tener revisada la documentación de LLVMIR (en especial el tutorial oficial para desarrollar frontends), TPO7 casi terminado.</li>
+<li>31/5: El TPF puede compilar un programa que imprime algo en la consola</li>
+<li>7/6: Terminado el test harness, puede correr los tests del TPO5 ó TPO7.</li>
+<li>14/6: El TPF soporta: asignación de variables, inicialización de variables, expresiones matemáticas.</li>
+<li>21/6: El TPF soporta control del flujo del programa, funciones</li>
+<li>28/6: Finalizada la suite de tests</li>
+</ul>
+<h2 id="dinamica-de-trabajo" tabindex="-1">Dinámica de trabajo <a class="direct-link" href="#dinamica-de-trabajo" aria-hidden="true">#</a></h2>
+<ul>
+<li>En cada una de las clases del 24/5 al 21/6, se hace una reunión standup donde cada alumno cuenta brevemente qué hizo la semana pasada y qué va a hacer la semana que viene. Al final de que hable cada alumno, hay tiempo de hacer consultas</li>
+<li>El 28/6 (última clase) haremos una demo donde cada alumno muestra lo que tiene hasta el momento a sus compañeros, comenta qué decisiones de diseño tomó, qué dificultades encontró y cómo las resolvió.</li>
+<li>Cada alumno trabajará en un repositorio privado diferente, perteneciente a la organización &quot;compiladores&quot;. Se permite compartir cualquier información con los compañeros, pero no código. Se puede utilizar cualquier lenguaje de programación. El objetivo es crear un entorno colaborativo donde todos aprendamos.</li>
+<li>LLVM es un ecosistema muy documentado y con mucho material disponible en internet. Por ejemplo, <a href="https://llvm.org/docs/tutorial/MyFirstLanguageFrontend/index.html">este tutorial oficial</a> explica paso a paso cómo crear un lenguaje arriba de LLVM (este TP!). Nos interesa especialmente entender qué enfoque le da cada alumno y cómo resultan las dicisiones que cada uno haga.</li>
+</ul>
+<h2 id="criterios-de-evaluacion" tabindex="-1">Criterios de evaluación <a class="direct-link" href="#criterios-de-evaluacion" aria-hidden="true">#</a></h2>
+<p><strong>La condición <em>excluyente</em> para aprobar la cursada de la materia es tener un &quot;camino crítico&quot;: al menos 1 test de integración que verifique la salida de un programa que imprime algo a stdout.</strong></p>
+<ul>
+<li><strong>(4 puntos) Alcance mínimo alcanzado.</strong> Se construyó un compilador que soporta jsonlang casi completo*, existen tests de integración.</li>
+<li><strong>(2 puntos) Cumplir tiempos.</strong>
+<ul>
+<li>La asistencia a cada una de las 6 reuniones del 24/5 al 28/6 inclusive suma 0.25 puntos, independientemente de si el alumno tiene algo que decir en la standup.</li>
+<li>0.5 puntos asignados de forma subjetiva según cuán cerca del 28/6 se complete el TPF, tiene en cuenta que se haya completado el TPXF, etc.</li>
+</ul>
+</li>
+<li><strong>(2 puntos) Calidad de la implementación.</strong> Algunos criterios favorables:
+<ul>
+<li>Patrón visitor</li>
+<li>Inversión de dependencias</li>
+<li>Clean code</li>
+<li>Arquitectura definida</li>
+</ul>
+</li>
+<li><strong>(2 puntos) Calidad de la suite de tests automáticos</strong> Algunos criterios favorables:
+<ul>
+<li>Cubrir todos* los features de jsonlang implementados con tests de integración</li>
+<li>Medir cobertura</li>
+<li>Tests unitarios</li>
+</ul>
+</li>
+</ul>
+<p>*esto śe refiere a la versión &quot;reducida&quot; del jsonlang, que sólo maneja enteros.</p>
+<h2 id="tpxf:-parser-de-un-lenguaje-personalizado" tabindex="-1">TPXF: Parser de un lenguaje personalizado <a class="direct-link" href="#tpxf:-parser-de-un-lenguaje-personalizado" aria-hidden="true">#</a></h2>
+<p>Este TPX consiste en desarrollar un parser que emita jsonlang. El lenguaje desarrollado es totalmente personalizado. Se recomienda que el parser desarrollado funcione sobre una fracción de algún lenguaje de programación conocido con buen soporte de IDEs. Se debe usar una de las siguientes herramientas:</p>
+<ul>
+<li><a href="https://tree-sitter.github.io/tree-sitter/">tree-sitter</a> (suma como máximo 2 puntos)</li>
+<li><a href="https://nearley.js.org/">nearley.js sobre deno</a> (Suma como máximo 1.5 puntos)</li>
+<li><a href="http://gallium.inria.fr/~fpottier/menhir/">menhir integrado con dune, esy</a> (Suma como máximo 1.5 puntos)</li>
+</ul>
+<p>Este TPXF se entrega durante el cuatrimestre, no en época de finales, <strong>suma a la componente de nota del TPF</strong>, ya que la evaluación es subjetiva. <strong>Es obligatoria la presencia de tests.</strong> Componentes de la evaluación subjetiva:</p>
+<ul>
+<li>Calidad de la implementación (30%)</li>
+<li>Cobertura de la suite de tests (70%)</li>
+</ul>
+<h2 id="links-muy-relevantes" tabindex="-1">Links <strong>muy</strong> relevantes <a class="direct-link" href="#links-muy-relevantes" aria-hidden="true">#</a></h2>
+<ul>
+<li>LLVM language Reference: <a href="https://llvm.org/docs/LangRef.html">https://llvm.org/docs/LangRef.html</a></li>
+<li><strong>LLVM Frontend creation example using SDK: <a href="https://llvm.org/docs/tutorial/MyFirstLanguageFrontend/index.html">https://llvm.org/docs/tutorial/MyFirstLanguageFrontend/index.html</a></strong></li>
+<li>Understanding LLVM IR: <a href="https://mukulrathi.com/create-your-own-programming-language/llvm-ir-cpp-api-tutorial/">https://mukulrathi.com/create-your-own-programming-language/llvm-ir-cpp-api-tutorial/</a></li>
+<li>Mapping High Level Constructs to LLVM IR: <a href="https://buildmedia.readthedocs.org/media/pdf/mapping-high-level-constructs-to-llvm-ir/latest/mapping-high-level-constructs-to-llvm-ir.pdf">https://buildmedia.readthedocs.org/media/pdf/mapping-high-level-constructs-to-llvm-ir/latest/mapping-high-level-constructs-to-llvm-ir.pdf</a></li>
 </ul>
 
     </div>
