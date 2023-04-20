@@ -144,3 +144,70 @@ Fecha de entrega máxima tpx1: 2/5 23:59
 - [presentación](https://compiladores.github.io/p/interprete)
 - [classroom lab5](https://classroom.github.com/a/L2Ar-0iG)
 - [classroom tpo5](https://classroom.github.com/a/CWduB5qv)
+
+# Trabajo práctico final: compilador a LLVMIR
+
+- Objetivo: desarrollar un compilador de jsonasm a LLVMIR.
+- El esquema JSON correspondiente a jsonlang y baterías de pruebas se incluyen en TPO5 y TPO7. La batería de pruebas debe modificarse para cumplir con las diferencias enumeradas abajo. Esta adaptación es parte del alcance del TPF.
+- Los algoritmos necesarios para llevar adelante este TP son parte del módulo 7 (compilador)
+- La mayor parte del trabajo necesario se trata de analizar la documentación de LLVMIR https://llvm.org/docs/LangRef.html y el proyecto LLVM en sí mismo.
+- Diferencias entre TPF, TPO5 y TPO7:
+  - El TPF sólo debe soportar enteros. Las operaciones matemáticas válidas deben ser aquellas que funcionan entre 2 enteros y devuelven un entero.
+  - No es obligatorio que el TPF soporte recursividad (tal como TPO7)
+- No se debe usar C++ para la implementación del TPF.
+
+## Cronograma recomendado
+
+- 24/5: Tener revisada la documentación de LLVMIR (en especial el tutorial oficial para desarrollar frontends), TPO7 casi terminado.
+- 31/5: El TPF puede compilar un programa que imprime algo en la consola
+- 7/6: Terminado el test harness, puede correr los tests del TPO5 ó TPO7.
+- 14/6: El TPF soporta: asignación de variables, inicialización de variables, expresiones matemáticas.
+- 21/6: El TPF soporta control del flujo del programa, funciones
+- 28/6: Finalizada la suite de tests
+
+## Dinámica de trabajo
+
+- En cada una de las clases del 24/5 al 21/6, se hace una reunión standup donde cada alumno cuenta brevemente qué hizo la semana pasada y qué va a hacer la semana que viene. Al final de que hable cada alumno, hay tiempo de hacer consultas
+- El 28/6 (última clase) haremos una demo donde cada alumno muestra lo que tiene hasta el momento a sus compañeros, comenta qué decisiones de diseño tomó, qué dificultades encontró y cómo las resolvió.
+- Cada alumno trabajará en un repositorio privado diferente, perteneciente a la organización "compiladores". Se permite compartir cualquier información con los compañeros, pero no código. Se puede utilizar cualquier lenguaje de programación. El objetivo es crear un entorno colaborativo donde todos aprendamos.
+- LLVM es un ecosistema muy documentado y con mucho material disponible en internet. Por ejemplo, [este tutorial oficial](https://llvm.org/docs/tutorial/MyFirstLanguageFrontend/index.html) explica paso a paso cómo crear un lenguaje arriba de LLVM (este TP!). Nos interesa especialmente entender qué enfoque le da cada alumno y cómo resultan las dicisiones que cada uno haga.
+
+## Criterios de evaluación
+
+**La condición _excluyente_ para aprobar la cursada de la materia es tener un "camino crítico": al menos 1 test de integración que verifique la salida de un programa que imprime algo a stdout.**
+
+- **(4 puntos) Alcance mínimo alcanzado.** Se construyó un compilador que soporta jsonlang casi completo\*, existen tests de integración.
+- **(2 puntos) Cumplir tiempos.**
+  - La asistencia a cada una de las 6 reuniones del 24/5 al 28/6 inclusive suma 0.25 puntos, independientemente de si el alumno tiene algo que decir en la standup.
+  - 0.5 puntos asignados de forma subjetiva según cuán cerca del 28/6 se complete el TPF, tiene en cuenta que se haya completado el TPXF, etc.
+- **(2 puntos) Calidad de la implementación.** Algunos criterios favorables:
+  - Patrón visitor
+  - Inversión de dependencias
+  - Clean code
+  - Arquitectura definida
+- **(2 puntos) Calidad de la suite de tests automáticos** Algunos criterios favorables:
+  - Cubrir todos\* los features de jsonlang implementados con tests de integración
+  - Medir cobertura
+  - Tests unitarios
+
+\*esto śe refiere a la versión "reducida" del jsonlang, que sólo maneja enteros.
+
+## TPXF: Parser de un lenguaje personalizado
+
+Este TPX consiste en desarrollar un parser que emita jsonlang. El lenguaje desarrollado es totalmente personalizado. Se recomienda que el parser desarrollado funcione sobre una fracción de algún lenguaje de programación conocido con buen soporte de IDEs. Se debe usar una de las siguientes herramientas:
+
+- [tree-sitter](https://tree-sitter.github.io/tree-sitter/) (suma como máximo 2 puntos)
+- [nearley.js sobre deno](https://nearley.js.org/) (Suma como máximo 1.5 puntos)
+- [menhir integrado con dune, esy](http://gallium.inria.fr/~fpottier/menhir/) (Suma como máximo 1.5 puntos)
+
+Este TPXF se entrega durante el cuatrimestre, no en época de finales, **suma a la componente de nota del TPF**, ya que la evaluación es subjetiva. **Es obligatoria la presencia de tests.** Componentes de la evaluación subjetiva:
+
+- Calidad de la implementación (30%)
+- Cobertura de la suite de tests (70%)
+
+## Links **muy** relevantes
+
+- LLVM language Reference: https://llvm.org/docs/LangRef.html
+- **LLVM Frontend creation example using SDK: https://llvm.org/docs/tutorial/MyFirstLanguageFrontend/index.html**
+- Understanding LLVM IR: https://mukulrathi.com/create-your-own-programming-language/llvm-ir-cpp-api-tutorial/
+- Mapping High Level Constructs to LLVM IR: https://buildmedia.readthedocs.org/media/pdf/mapping-high-level-constructs-to-llvm-ir/latest/mapping-high-level-constructs-to-llvm-ir.pdf
