@@ -13,6 +13,10 @@ module.exports = {
     debugScreens: {
       position: ['bottom', 'right'],
     },
-    extend: {},
+    extend: {
+      colors:{
+        "compiviolet":"#cfd5e6"
+      }
+    },
   },
 }

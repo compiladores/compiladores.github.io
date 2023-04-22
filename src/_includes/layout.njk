@@ -6,15 +6,52 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="/assets/main.bundle.css">
   <script src="/assets/main.bundle.js" defer></script>
-  <title>{{ title }}</title>
+  <title>Lenguajes y Compiladores Fiuba {{ semester }}</title>
 </head>
+<style>
+  body {
+    background-color: ##f0f2f7;
+background-image: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'%3E%3Ctitle%3Ehoundstooth%3C/title%3E%3Cg fill='%23f0f3fc' fill-opacity='0.5' fill-rule='evenodd'%3E%3Cpath d='M0 18h6l6-6v6h6l-6 6H0M24 18v6h-6M24 0l-6 6h-6l6-6M12 0v6L0 18v-6l6-6H0V0'/%3E%3C/g%3E%3C/svg%3E");
+  }
+</style>
 
 <body class="{{ 'debug-screens' if env.devMode }}">
-  <div class="container py-16">
-    
-    <div class="prose max-w-none font-serif prose-h2:ml-4 prose-h3:ml-8 w-full overflow-x-hidden">
-      <h1>{{title}}</h1>
-      {{ content | toc | safe }}
+  <div class="container py-4 mx-auto max-w-screen-md px-0">
+    <div class="py-12">
+      <h1 class="text-center font-sans text-4xl">Lenguajes y Compiladores FIUBA</h1>
+      <h2 class="text-center font-sans text-xl">{{semester_long}}</h2>
+    </div>
+    <div class="
+      prose 
+      max-w-none font-serif 
+      prose-h2:ml-4 
+      prose-h2:mt-1
+      prose-h3:ml-8 w-full 
+      prose-p:text-justify 
+      prose-li:text-justify 
+      relative
+      
+      prose-h1:sticky 
+      prose-h1:top-0 
+      prose-h1:py-2
+      prose-h1:bg-white
+      prose-h1:border-b
+      prose-h1:border-compiviolet
+
+      
+      [&_>_section]:bg-white
+      [&_>_section]:px-4
+      [&_section]:pl-2
+      [&_>_section]:my-8
+      [&_>_section]:pb-1
+      [&_>_section]:rounded-lg
+      [&_>_section]:border
+      [&_>_section]:border-compiviolet
+      ">
+      <section>
+        <h1>Contenido</h1>
+        {{ content | toc | safe }}
+      </section>
       {{ content | safe }}
     </div>
   </div>
