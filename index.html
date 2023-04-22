@@ -6,18 +6,59 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="/assets/main.bundle.css">
   <script src="/assets/main.bundle.js" defer></script>
-  <title>Lenguajes y Compiladores FIUBA 1c23</title>
+  <title>Lenguajes y Compiladores Fiuba 1c23</title>
 </head>
+<style>
+  body {
+    background-color: ##f0f2f7;
+background-image: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'%3E%3Ctitle%3Ehoundstooth%3C/title%3E%3Cg fill='%23f0f3fc' fill-opacity='0.5' fill-rule='evenodd'%3E%3Cpath d='M0 18h6l6-6v6h6l-6 6H0M24 18v6h-6M24 0l-6 6h-6l6-6M12 0v6L0 18v-6l6-6H0V0'/%3E%3C/g%3E%3C/svg%3E");
+  }
+</style>
 
 <body class="">
-  <div class="container py-16">
-    
-    <div class="prose max-w-none font-serif prose-h2:ml-4 prose-h3:ml-8 w-full overflow-x-hidden">
-      <h1>Lenguajes y Compiladores FIUBA 1c23</h1>
-      <ol><li><a href="#notas">Notas #</a></li><li><a href="#docentes">Docentes #</a></li><li><a href="#bibligrafia">Bibligrafía #</a></li><li><a href="#horarios-de-clase">Horarios de clase #</a></li><li><a href="#canales-de-comunicacion">Canales de Comunicación #</a></li><li><a href="#calendario">Calendario #</a></li><li><a href="#metodologia-de-la-practica">Metodología de la práctica #</a><ol><li><a href="#tabla-de-pesos-de-cada-entregable-en-la-nota-final">Tabla de pesos de cada entregable en la nota final #</a></li></ol></li><li><a href="#material-1c23">Material 1c23 #</a><ol><li><a href="#practica-1-semop">práctica 1 - semop #</a></li><li><a href="#practica-2-tipos">práctica 2 - tipos #</a></li><li><a href="#teorica-3-lexers-introduccion-a-parsers">Teórica 3 - lexers, introducción a parsers #</a></li><li><a href="#practica-3-lexers">práctica 3 - lexers #</a></li><li><a href="#practica-4-parser-descendiente-recursivo">práctica 4 - parser descendiente recursivo #</a></li><li><a href="#practica-5-interprete">práctica 5 - intérprete #</a></li></ol></li><li><a href="#trabajo-practico-final:-compilador-a-llvmir">Trabajo práctico final: compilador a LLVMIR #</a><ol><li><a href="#cronograma-recomendado">Cronograma recomendado #</a></li><li><a href="#dinamica-de-trabajo">Dinámica de trabajo #</a></li><li><a href="#criterios-de-evaluacion">Criterios de evaluación #</a></li><li><a href="#tpxf:-parser-de-un-lenguaje-personalizado">TPXF: Parser de un lenguaje personalizado #</a></li><li><a href="#links-muy-relevantes">Links muy relevantes #</a></li></ol></li></ol>
-      <p>Se viene una nueva edición de compiladores. Cátedra Mendez.</p>
+  <div class="container py-4 mx-auto max-w-screen-md px-0">
+    <div class="py-12">
+      <h1 class="text-center font-sans text-4xl">Lenguajes y Compiladores FIUBA</h1>
+      <h2 class="text-center font-sans text-xl">Primer Cuatrimestre 2022</h2>
+    </div>
+    <div class="
+      prose 
+      max-w-none font-serif 
+      prose-h2:ml-4 
+      prose-h2:mt-1
+      prose-h3:ml-8 w-full 
+      prose-p:text-justify 
+      prose-li:text-justify 
+      relative
+      
+      prose-h1:sticky 
+      prose-h1:top-0 
+      prose-h1:py-2
+      prose-h1:bg-white
+      prose-h1:border-b
+      prose-h1:border-compiviolet
+
+      
+      [&_>_section]:bg-white
+      [&_>_section]:px-4
+      [&_section]:pl-2
+      [&_>_section]:my-8
+      [&_>_section]:pb-1
+      [&_>_section]:rounded-lg
+      [&_>_section]:border
+      [&_>_section]:border-compiviolet
+      ">
+      <section>
+        <h1>Contenido</h1>
+        <ol><li><a href="#introduccion">Introducción #</a></li><li><a href="#notas">Notas #</a></li><li><a href="#docentes">Docentes #</a></li><li><a href="#bibligrafia">Bibligrafía #</a></li><li><a href="#horarios-de-clase">Horarios de clase #</a></li><li><a href="#canales-de-comunicacion">Canales de Comunicación #</a></li><li><a href="#calendario">Calendario #</a></li><li><a href="#metodologia-de-la-practica">Metodología de la práctica #</a><ol><li><a href="#tabla-de-pesos-de-cada-entregable-en-la-nota-final">Tabla de pesos de cada entregable en la nota final #</a></li></ol></li><li><a href="#material-1c23">Material 1c23 #</a><ol><li><a href="#practica-1-semop">práctica 1 - semop #</a></li><li><a href="#practica-2-tipos">práctica 2 - tipos #</a></li><li><a href="#teorica-3-lexers-introduccion-a-parsers">Teórica 3 - lexers, introducción a parsers #</a></li><li><a href="#practica-3-lexers">práctica 3 - lexers #</a></li><li><a href="#practica-4-parser-descendiente-recursivo">práctica 4 - parser descendiente recursivo #</a></li><li><a href="#practica-5-interprete">práctica 5 - intérprete #</a></li></ol></li><li><a href="#trabajo-practico-final:-compilador-a-llvmir">Trabajo práctico final: compilador a LLVMIR #</a><ol><li><a href="#cronograma-recomendado">Cronograma recomendado #</a></li><li><a href="#dinamica-de-trabajo">Dinámica de trabajo #</a></li><li><a href="#criterios-de-evaluacion">Criterios de evaluación #</a></li><li><a href="#tpxf:-parser-de-un-lenguaje-personalizado">TPXF: Parser de un lenguaje personalizado #</a></li><li><a href="#links-muy-relevantes">Links muy relevantes #</a></li></ol></li></ol>
+      </section>
+      <section>
+<h1 id="introduccion" tabindex="-1">Introducción <a class="direct-link" href="#introduccion" aria-hidden="true">#</a></h1>
+<p>Se viene una nueva edición de compiladores. Cátedra Mendez.</p>
 <p>A pesar de que los utilizan todos los días, la mayoría de los ingenieros de software tienen muy poco conocimiento sobre cómo están diseñados e implementados los lenguajes de programación. Solo con ver que las portadas de los libros sobre el tema tienen “dragones”, “tigres” y otras bestias mitológicas que sugieren una rama muy compleja de las Ciencias de la Computación se esconde detrás de ellas. Este curso romperá este prejuicio y basándose en un enfoque teórico-práctico emprenderá un camino para comprender y estudiar la belleza detrás de los lenguajes de programación y sus compiladores. El objetivo de la materia es entender, diseñar e implementar un compilador y un intérprete de un lenguaje de programación de alto nivel. Además de adquirir y manejar los conceptos de la Ciencia de la Computación involucrados en la construcción de este tipo de herramientas: teoría del lenguaje, autómatas finitos deterministas y no deterministas, análisis sintáctico ascendente y descendente, análisis semántico, generación de código intermedio y generación de código ejecutable, optimización de código, entre otros.</p>
 <p>Se renovaron los trabajos prácticos: utilizaremos deno y typescript. En el cuatrimestre se utilizará el intérprete del lenguaje LUA como caso de estudio. Los alumnos desarrollarán un lenguaje de programación personalizado a lo largo del cuatrimestre, haciendo entregas pequeñas y pautadas. Como TP final, adaptarán el lenguaje a alguna otra máquina virtual existente de aplicación industrial que deseen.</p>
+</section>
+<section>
 <h1 id="notas" tabindex="-1">Notas <a class="direct-link" href="#notas" aria-hidden="true">#</a></h1>
 <script>
     function initData(){
@@ -114,6 +155,8 @@
         </tbody>
     </table></div>
 </div>
+</section>
+<section>
 <h1 id="docentes" tabindex="-1">Docentes <a class="direct-link" href="#docentes" aria-hidden="true">#</a></h1>
 <ul>
 <li>Prof.: Mariano Méndez
@@ -134,6 +177,8 @@
 </ul>
 </li>
 </ul>
+</section>
+<section>
 <h1 id="bibligrafia" tabindex="-1">Bibligrafía <a class="direct-link" href="#bibligrafia" aria-hidden="true">#</a></h1>
 <ol>
 <li>Watson, D. (2017). <strong>A practical approach to compiler construction</strong>. Springer International Publishing.</li>
@@ -151,21 +196,29 @@
 </ol>
 <p>y muchos más</p>
 <p>(*) indica los libros clásicos.</p>
+</section>
+<section>
 <h1 id="horarios-de-clase" tabindex="-1">Horarios de clase <a class="direct-link" href="#horarios-de-clase" aria-hidden="true">#</a></h1>
 <ul>
 <li>Martes 18 a 21 (teórica presencial)</li>
 <li>Miércoles 18 a 21 (práctica virtual)</li>
 </ul>
 <p>Las clases virtuales se realizan en un link de google meet que se envía unos minutos antes de la clase a discord.</p>
+</section>
+<section>
 <h1 id="canales-de-comunicacion" tabindex="-1">Canales de Comunicación <a class="direct-link" href="#canales-de-comunicacion" aria-hidden="true">#</a></h1>
 <ul>
 <li><a href="https://groups.google.com/g/lenguajes-y-compiladores">grupo de google</a></li>
 <li>Servidor de discord</li>
 <li><a href="https://compiladores.github.io/teo">Apunte de la teoría</a></li>
 </ul>
+</section>
+<section>
 <h1 id="calendario" tabindex="-1">Calendario <a class="direct-link" href="#calendario" aria-hidden="true">#</a></h1>
 <iframe width=800 height=500 src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQg_Xk6KqXCaGjjuN8_eFZ8S_HweXNvoIhNGCRAcQIESBxV7uKxnNwW4k_EEnji-OLPApirdMX6a1p_/pubhtml?gid=1728272792&amp;single=true&amp;widget=true&amp;headers=false" class="w-full"></iframe>
 Fecha de entrega máxima tpx1: 2/5 23:59
+</section>
+<section>
 <h1 id="metodologia-de-la-practica" tabindex="-1">Metodología de la práctica <a class="direct-link" href="#metodologia-de-la-practica" aria-hidden="true">#</a></h1>
 <div class="scroll-table" style="overflow-x:auto;"><table>
     <thead>
@@ -208,9 +261,14 @@ Fecha de entrega máxima tpx1: 2/5 23:59
 <li>Nota final: 60% TPF + 40% nota de la práctica.</li>
 <li>Condición de aprobación (nota 4): Entregar todos los TPO antes de la última clase de la práctica</li>
 </ul>
+<section>
 <h2 id="tabla-de-pesos-de-cada-entregable-en-la-nota-final" tabindex="-1">Tabla de pesos de cada entregable en la nota final <a class="direct-link" href="#tabla-de-pesos-de-cada-entregable-en-la-nota-final" aria-hidden="true">#</a></h2>
 <iframe width=800 height=500 src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQg_Xk6KqXCaGjjuN8_eFZ8S_HweXNvoIhNGCRAcQIESBxV7uKxnNwW4k_EEnji-OLPApirdMX6a1p_/pubhtml?gid=173989754&amp;single=true&amp;widget=false&amp;headers=false" class="w-full"></iframe>
+</section>
+</section>
+<section>
 <h1 id="material-1c23" tabindex="-1">Material 1c23 <a class="direct-link" href="#material-1c23" aria-hidden="true">#</a></h1>
+<section>
 <h2 id="practica-1-semop" tabindex="-1">práctica 1 - semop <a class="direct-link" href="#practica-1-semop" aria-hidden="true">#</a></h2>
 <ul>
 <li>Tema: semántica operacional</li>
@@ -222,6 +280,8 @@ Fecha de entrega máxima tpx1: 2/5 23:59
 <li><a href="https://classroom.github.com/a/yRgjdgOG">classroom tpo1</a> fecha límite: martes 11/4 23:59</li>
 <li><a href="https://classroom.github.com/a/cUYwFpRx">classroom tpx1</a> fecha límite: martes 2/5 23:59. <strong>Por dependencia entre temas, recomendamos completarlo antes del 18/4</strong></li>
 </ul>
+</section>
+<section>
 <h2 id="practica-2-tipos" tabindex="-1">práctica 2 - tipos <a class="direct-link" href="#practica-2-tipos" aria-hidden="true">#</a></h2>
 <ul>
 <li>Tema: tipos</li>
@@ -230,11 +290,15 @@ Fecha de entrega máxima tpx1: 2/5 23:59
 <li><a href="https://compiladores.github.io/p/tipos">presentación</a></li>
 <li><a href="https://classroom.github.com/a/R_M-Sn_O">classroom lab2</a></li>
 </ul>
+</section>
+<section>
 <h2 id="teorica-3-lexers-introduccion-a-parsers" tabindex="-1">Teórica 3 - lexers, introducción a parsers <a class="direct-link" href="#teorica-3-lexers-introduccion-a-parsers" aria-hidden="true">#</a></h2>
 <ul>
 <li>Fecha: 28/03/23</li>
 <li><a href="https://youtu.be/2zfyKaDnbQg">video de la clase</a></li>
 </ul>
+</section>
+<section>
 <h2 id="practica-3-lexers" tabindex="-1">práctica 3 - lexers <a class="direct-link" href="#practica-3-lexers" aria-hidden="true">#</a></h2>
 <ul>
 <li>Fecha: 29/03/23</li>
@@ -244,6 +308,8 @@ Fecha de entrega máxima tpx1: 2/5 23:59
 <li><a href="https://classroom.github.com/a/9LGlGcwp">classroom tpo3</a></li>
 <li><a href="https://classroom.github.com/a/_Ju8juVe">classroom tpx3</a></li>
 </ul>
+</section>
+<section>
 <h2 id="practica-4-parser-descendiente-recursivo" tabindex="-1">práctica 4 - parser descendiente recursivo <a class="direct-link" href="#practica-4-parser-descendiente-recursivo" aria-hidden="true">#</a></h2>
 <ul>
 <li>Fecha: 12/04/2023</li>
@@ -251,6 +317,8 @@ Fecha de entrega máxima tpx1: 2/5 23:59
 <li><a href="https://compiladores.github.io/p/parserdr">presentación</a></li>
 <li><a href="https://classroom.github.com/a/oJQz729m">classroom tpo4</a></li>
 </ul>
+</section>
+<section>
 <h2 id="practica-5-interprete" tabindex="-1">práctica 5 - intérprete <a class="direct-link" href="#practica-5-interprete" aria-hidden="true">#</a></h2>
 <ul>
 <li>Fecha: 19/4/2023</li>
@@ -259,6 +327,9 @@ Fecha de entrega máxima tpx1: 2/5 23:59
 <li><a href="https://classroom.github.com/a/L2Ar-0iG">classroom lab5</a></li>
 <li><a href="https://classroom.github.com/a/CWduB5qv">classroom tpo5</a></li>
 </ul>
+</section>
+</section>
+<section>
 <h1 id="trabajo-practico-final:-compilador-a-llvmir" tabindex="-1">Trabajo práctico final: compilador a LLVMIR <a class="direct-link" href="#trabajo-practico-final:-compilador-a-llvmir" aria-hidden="true">#</a></h1>
 <ul>
 <li>Objetivo: desarrollar un compilador de jsonasm a LLVMIR.</li>
@@ -273,6 +344,7 @@ Fecha de entrega máxima tpx1: 2/5 23:59
 </li>
 <li>No se debe usar C++ para la implementación del TPF.</li>
 </ul>
+<section>
 <h2 id="cronograma-recomendado" tabindex="-1">Cronograma recomendado <a class="direct-link" href="#cronograma-recomendado" aria-hidden="true">#</a></h2>
 <ul>
 <li>24/5: Tener revisada la documentación de LLVMIR (en especial el tutorial oficial para desarrollar frontends), TPO7 casi terminado.</li>
@@ -282,6 +354,8 @@ Fecha de entrega máxima tpx1: 2/5 23:59
 <li>21/6: El TPF soporta control del flujo del programa, funciones</li>
 <li>28/6: Finalizada la suite de tests</li>
 </ul>
+</section>
+<section>
 <h2 id="dinamica-de-trabajo" tabindex="-1">Dinámica de trabajo <a class="direct-link" href="#dinamica-de-trabajo" aria-hidden="true">#</a></h2>
 <ul>
 <li>En cada una de las clases del 24/5 al 21/6, se hace una reunión standup donde cada alumno cuenta brevemente qué hizo la semana pasada y qué va a hacer la semana que viene. Al final de que hable cada alumno, hay tiempo de hacer consultas</li>
@@ -289,6 +363,8 @@ Fecha de entrega máxima tpx1: 2/5 23:59
 <li>Cada alumno trabajará en un repositorio privado diferente, perteneciente a la organización &quot;compiladores&quot;. Se permite compartir cualquier información con los compañeros, pero no código. Se puede utilizar cualquier lenguaje de programación. El objetivo es crear un entorno colaborativo donde todos aprendamos.</li>
 <li>LLVM es un ecosistema muy documentado y con mucho material disponible en internet. Por ejemplo, <a href="https://llvm.org/docs/tutorial/MyFirstLanguageFrontend/index.html">este tutorial oficial</a> explica paso a paso cómo crear un lenguaje arriba de LLVM (este TP!). Nos interesa especialmente entender qué enfoque le da cada alumno y cómo resultan las dicisiones que cada uno haga.</li>
 </ul>
+</section>
+<section>
 <h2 id="criterios-de-evaluacion" tabindex="-1">Criterios de evaluación <a class="direct-link" href="#criterios-de-evaluacion" aria-hidden="true">#</a></h2>
 <p><strong>La condición <em>excluyente</em> para aprobar la cursada de la materia es tener un &quot;camino crítico&quot;: al menos 1 test de integración que verifique la salida de un programa que imprime algo a stdout.</strong></p>
 <ul>
@@ -316,6 +392,8 @@ Fecha de entrega máxima tpx1: 2/5 23:59
 </li>
 </ul>
 <p>*esto śe refiere a la versión &quot;reducida&quot; del jsonlang, que sólo maneja enteros.</p>
+</section>
+<section>
 <h2 id="tpxf:-parser-de-un-lenguaje-personalizado" tabindex="-1">TPXF: Parser de un lenguaje personalizado <a class="direct-link" href="#tpxf:-parser-de-un-lenguaje-personalizado" aria-hidden="true">#</a></h2>
 <p>Este TPX consiste en desarrollar un parser que emita jsonlang. El lenguaje desarrollado es totalmente personalizado. Se recomienda que el parser desarrollado funcione sobre una fracción de algún lenguaje de programación conocido con buen soporte de IDEs. Se debe usar una de las siguientes herramientas:</p>
 <ul>
@@ -328,6 +406,8 @@ Fecha de entrega máxima tpx1: 2/5 23:59
 <li>Calidad de la implementación (30%)</li>
 <li>Cobertura de la suite de tests (70%)</li>
 </ul>
+</section>
+<section>
 <h2 id="links-muy-relevantes" tabindex="-1">Links <strong>muy</strong> relevantes <a class="direct-link" href="#links-muy-relevantes" aria-hidden="true">#</a></h2>
 <ul>
 <li>LLVM language Reference: <a href="https://llvm.org/docs/LangRef.html">https://llvm.org/docs/LangRef.html</a></li>
@@ -335,6 +415,8 @@ Fecha de entrega máxima tpx1: 2/5 23:59
 <li>Understanding LLVM IR: <a href="https://mukulrathi.com/create-your-own-programming-language/llvm-ir-cpp-api-tutorial/">https://mukulrathi.com/create-your-own-programming-language/llvm-ir-cpp-api-tutorial/</a></li>
 <li>Mapping High Level Constructs to LLVM IR: <a href="https://buildmedia.readthedocs.org/media/pdf/mapping-high-level-constructs-to-llvm-ir/latest/mapping-high-level-constructs-to-llvm-ir.pdf">https://buildmedia.readthedocs.org/media/pdf/mapping-high-level-constructs-to-llvm-ir/latest/mapping-high-level-constructs-to-llvm-ir.pdf</a></li>
 </ul>
+</section>
+</section>
 
     </div>
   </div>
