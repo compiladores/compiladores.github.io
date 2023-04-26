@@ -13,6 +13,9 @@
     background-color: ##f0f2f7;
 background-image: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'%3E%3Ctitle%3Ehoundstooth%3C/title%3E%3Cg fill='%23f0f3fc' fill-opacity='0.5' fill-rule='evenodd'%3E%3Cpath d='M0 18h6l6-6v6h6l-6 6H0M24 18v6h-6M24 0l-6 6h-6l6-6M12 0v6L0 18v-6l6-6H0V0'/%3E%3C/g%3E%3C/svg%3E");
   }
+  *:target:after{
+    content:"  👈"
+  }
 </style>
 
 <body class="{{ 'debug-screens' if env.devMode }}">
@@ -22,7 +25,7 @@ background-image: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox=
       <h2 class="text-center font-sans text-xl">{{semester_long}}</h2>
     </div>
     <div class="
-      prose 
+      prose
       max-w-none font-serif 
       prose-h2:ml-4 
       prose-h2:mt-1
@@ -30,6 +33,10 @@ background-image: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox=
       prose-p:text-justify 
       prose-li:text-justify 
       relative
+
+      prose-h2:font-sans
+      prose-h2:text-gray-600
+      prose-h2:capitalize
       
       prose-h1:sticky 
       prose-h1:top-0 
@@ -37,6 +44,10 @@ background-image: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox=
       prose-h1:bg-white
       prose-h1:border-b
       prose-h1:border-compiviolet
+      prose-h1:font-sans
+      prose-h1:text-gray-600
+      [&_.direct-link]:text-compiviolet
+      [&_.direct-link]:no-underline
 
       
       [&_>_section]:bg-white
@@ -47,6 +58,7 @@ background-image: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox=
       [&_>_section]:pb-1
       [&_>_section]:rounded-lg
       [&_>_section]:border
+      [&_>_section:has(*:target)]:shadow-xl
       [&_>_section]:border-compiviolet
       ">
       <section>
