@@ -50,22 +50,26 @@ background-image: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox=
       [&_.direct-link]:no-underline
 
       
-      [&_>_section]:bg-white
-      [&_>_section]:md:px-4
-      [&_>_section]:px-2
+      [&_*_>_section]:bg-white
+      [&_*_>_section]:md:px-4
+      [&_*_>_section]:px-2
       [&_section]:md:pl-2
-      [&_>_section]:my-8
-      [&_>_section]:pb-1
-      [&_>_section]:rounded-lg
-      [&_>_section]:border
-      [&_>_section:has(*:target)]:shadow-xl
-      [&_>_section]:border-compiviolet
+      [&_*_>_section]:my-8
+      [&_*_>_section]:pb-1
+      [&_*_>_section]:rounded-lg
+      [&_*_>_section]:border
+      [&_*_>_section:has(*:target)]:shadow-xl
+      [&_*_>_section]:border-compiviolet
       ">
-      <section>
-        <h1>Contenido</h1>
-        {{ content | toc | safe }}
-      </section>
-      {{ content | safe }}
+      <div>
+        <section>
+          <h1>Contenido</h1>
+          {{ content | toc | safe }}
+        </section>
+      </div>
+      <div>
+        {{ content | safe }}
+      </div>
     </div>
   </div>
 </body>
