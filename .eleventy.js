@@ -24,7 +24,7 @@ module.exports = (config) => {
   })
   .use(require('markdown-it-scrolltable'))
   ;
-  config.addPlugin(tocExtract, {listElement: "ol", minLevel: 1, tags:["section"]})
+  config.addPlugin(tocExtract, {listElement: "ul", minLevel: 1, tags:["section"]})
   config.setLibrary("md", markdownLibrary);
   return {
     dir: {

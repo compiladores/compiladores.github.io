@@ -1,0 +1,30 @@
+
+<script>
+    (function(){
+        const threshold=0
+        function getLinksToId(id){
+            return document.querySelectorAll(`a[href="#${id}"]`)
+        }
+        const callback = (entries,observer)=>{
+            console.log("call")
+            entries.forEach(({target, intersectionRatio}) => {
+                const firstChildWithId=target.querySelector("[id]");
+                if(firstChildWithId===null) return;
+                const titleId=firstChildWithId.id
+                if(intersectionRatio<=threshold){
+                    getLinksToId(titleId).forEach(e => {
+                        e.classList.remove("viewing")
+                    })
+                }else{
+                    getLinksToId(titleId).forEach(e => {
+                        e.classList.add("viewing")
+                    })
+                }
+            })
+        }
+        let observer = new IntersectionObserver(callback, {
+            threshold,
+        });
+        document.querySelectorAll("section").forEach((e)=>observer.observe(e))
+    })()
+</script>

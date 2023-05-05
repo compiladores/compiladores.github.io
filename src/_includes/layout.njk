@@ -64,12 +64,53 @@ background-image: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox=
       xl:grid
       grid-cols-12
       gap-5
+
+      prose-a:underline-offset-2
+      prose-a:decoration-slate-400
+
       ">
       <div class="xl:col-span-3">
-        <section class="">
-          <h1>Contenido</h1>
-          {{ content | toc | safe }}
-        </section>
+        <div class="
+          xl:sticky 
+          xl:top-0
+          
+          xl:max-h-screen
+          xl:py-12
+          xl:-mt-12
+          flex
+        ">
+          <section class="
+          overflow-y-auto
+
+          
+          prose-a:no-underline
+          prose-a:font-sans
+          prose-a:opacity-70
+          hover:prose-a:opacity-100
+          hover:prose-a:underline
+          prose-a:capitalize
+
+          prose-a:whitespace-nowrap
+          prose-a:overflow-ellipsis
+          prose-a:overflow-hidden
+          prose-a:max-w-full
+          prose-a:block
+          [&_.viewing]:border-r-4
+          [&_.viewing]:border-compiviolet
+          
+          prose-li:overflow-ellipsis
+          
+          prose-ul:xl:pl-5
+          
+          
+
+          prose-li:text-base
+          
+          ">
+            <h1 class="xl:invisible xl:absolute bg-white">Contenido</h1>
+            {{ content | toc | replace(" #","") | safe }}
+          </section>
+        </div>
       </div>
       <div class="xl:col-span-9">
         {{ content | safe }}
@@ -77,5 +118,5 @@ background-image: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox=
     </div>
   </div>
 </body>
-
+{% include "detect_active_link.html" %}
 </html>
