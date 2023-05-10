@@ -154,6 +154,12 @@ Fecha de entrega máxima tpx1: 2/5 23:59
 - [presentación](https://compiladores.github.io/p/ll1)
 - [classroom lab6](https://classroom.github.com/a/EF0yae4L)
 
+## práctica 7 -  compilador
+- Fecha: 10/5/23
+- No hubo presentación de diapositivas
+- [video de la clase](https://youtu.be/mXqI113Qxy4)
+- [classroom tpo7](https://classroom.github.com/a/yhR1CSbl)
+
 # Trabajo práctico final: compilador a LLVMIR
 
 - Objetivo: desarrollar un compilador de jsonasm a LLVMIR.
