@@ -186,6 +186,8 @@ Fecha de entrega máxima tpx1: 2/5 23:59
 - El 28/6 (última clase) haremos una demo donde cada alumno muestra lo que tiene hasta el momento a sus compañeros, comenta qué decisiones de diseño tomó, qué dificultades encontró y cómo las resolvió.
 - Cada alumno trabajará en un repositorio privado diferente, perteneciente a la organización "compiladores". Se permite compartir cualquier información con los compañeros, pero no código. Se puede utilizar cualquier lenguaje de programación. El objetivo es crear un entorno colaborativo donde todos aprendamos.
 - LLVM es un ecosistema muy documentado y con mucho material disponible en internet. Por ejemplo, [este tutorial oficial](https://llvm.org/docs/tutorial/MyFirstLanguageFrontend/index.html) explica paso a paso cómo crear un lenguaje arriba de LLVM (este TP!). Nos interesa especialmente entender qué enfoque le da cada alumno y cómo resultan las dicisiones que cada uno haga.
+- **Nuevo!** La entrega se debe realizar en un repositorio creado por medio de [este link a classroom](https://classroom.github.com/a/VLn8RM7i).
+- **Nuevo!** [Repositorio con recursos útiles](https://github.com/compiladores/tpf_1c23_recursos) (parser de lua a jsonlang y suite de tests "desarmada" a partir de la cual se creo `integration.test.ts` del tpo7)
 
 ## Criterios de evaluación
 
